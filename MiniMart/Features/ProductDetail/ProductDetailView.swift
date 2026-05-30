@@ -38,7 +38,7 @@ struct ProductDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 
                 // Product Image
-                AsyncImage(url: URL(string: vm.product.images.first ?? "")) { phase in
+                CachedAsyncImage(url: URL(string: vm.product.images.first ?? "")) { phase in
                     switch phase {
                     case .empty:
                         ProgressView()

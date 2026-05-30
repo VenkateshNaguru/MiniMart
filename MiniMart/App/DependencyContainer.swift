@@ -36,4 +36,8 @@ final class DependencyContainer {
     func makeAddToCartUseCase() -> AddToCartUseCase {
         AddToCartUseCase(repository: cartRepository)
     }
+
+    func makeFetchCategoriesUseCase() -> FetchCategoriesUseCase {
+        FetchCategoriesUseCase(repository: productRespository)
+    }
 }

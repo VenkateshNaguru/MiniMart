@@ -20,7 +20,8 @@ final class AppCoordinator {
         self.dependencies = dependencies
         
         let vm = ProductListViewModel(
-            fetchProductsUseCase: dependencies.makeFetchProductUseCase()
+            fetchProductsUseCase: dependencies.makeFetchProductUseCase(),
+            fetchCategoriesUseCase: dependencies.makeFetchCategoriesUseCase()
         )
         self.productListViewModel = vm
         vm.onProductSelected = { [weak self] product in

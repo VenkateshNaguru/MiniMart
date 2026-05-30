@@ -11,7 +11,7 @@ struct ProductRow: View {
     let product: Product
     var body: some View {
         HStack(spacing: 12) {
-            AsyncImage(url: URL(string: product.images.first ?? "")) { phase in
+            CachedAsyncImage(url: URL(string: product.images.first ?? "")) { phase in
                 switch phase {
                 case .empty:
                     ProgressView().frame(width: 60, height: 60)

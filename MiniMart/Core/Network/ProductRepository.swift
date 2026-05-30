@@ -11,6 +11,7 @@ protocol ProductRepositoryProtocol {
     func fetchProducts() async throws -> [Product]
     func fetchProduct(id: Int) async throws -> Product
     func searchProducts(title: String) async throws -> [Product]
+    func fetchCategories() async throws -> [Category]
 }
 
 final class ProductRepository: ProductRepositoryProtocol {
@@ -30,5 +31,9 @@ final class ProductRepository: ProductRepositoryProtocol {
     
     func searchProducts(title: String) async throws -> [Product] {
         try await networkClient.fetch(endpoint: .searchProducts(title: title))
+    }
+
+    func fetchCategories() async throws -> [Category] {
+        try await networkClient.fetch(endpoint: .categories)
     }
 }
