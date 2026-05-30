@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MiniMartCore
 import Observation
 
 @MainActor

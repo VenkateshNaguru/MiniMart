@@ -5,8 +5,9 @@
 //  Created by Venkatesh on 5/23/26.
 //
 
-import Foundation
 import Combine
+import Foundation
+import MiniMartCore
 
 class SearchViewModel: ObservableObject {
     @Published var searchText = ""

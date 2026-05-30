@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MiniMartCore
 
 protocol CartRepositoryProtocol {
     func addToCart(_ product: Product)

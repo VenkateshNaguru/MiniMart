@@ -14,7 +14,7 @@ enum NetworkError: Error {
     case serverError(Int)
 }
 
-final class NetworkClient {
+public final class NetworkClient {
     private let session: URLSession
     private let baseURL = "https://api.escuelajs.co/api/v1"
     

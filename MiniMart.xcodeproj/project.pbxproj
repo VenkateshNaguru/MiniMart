@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9BE462262FCB33D5001A6527 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9BE462202FCB33D5001A6527 /* .gitignore */; };
+		9BE4623D2FCB4D9D001A6527 /* MiniMartCore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BE4623C2FCB4D9D001A6527 /* MiniMartCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9B455CD12FB4E38C00CA597C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +32,8 @@
 		9B455CC12FB4E38B00CA597C /* MiniMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B455CD02FB4E38C00CA597C /* MiniMartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniMartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B455CDA2FB4E38C00CA597C /* MiniMartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniMartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BE462202FCB33D5001A6527 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9BE462212FCB33D5001A6527 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -45,6 +52,21 @@
 			path = MiniMartUITests;
 			sourceTree = "<group>";
 		};
+		9BE462282FCB4C28001A6527 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9BE4622F2FCB4C44001A6527 /* Network */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9BE462372FCB4C52001A6527 /* Cache */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Cache;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE4623D2FCB4D9D001A6527 /* MiniMartCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +98,11 @@
 		9B455CB82FB4E38B00CA597C = {
 			isa = PBXGroup;
 			children = (
+				9BE462222FCB33D5001A6527 /* MiniMartCore */,
 				9B455CC32FB4E38B00CA597C /* MiniMart */,
 				9B455CD32FB4E38C00CA597C /* MiniMartTests */,
 				9B455CDD2FB4E38C00CA597C /* MiniMartUITests */,
+				9BE4623B2FCB4D9D001A6527 /* Frameworks */,
 				9B455CC22FB4E38B00CA597C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +115,41 @@
 				9B455CDA2FB4E38C00CA597C /* MiniMartUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9BE4621B2FCB33D5001A6527 /* MiniMartCore */ = {
+			isa = PBXGroup;
+			children = (
+				9BE462372FCB4C52001A6527 /* Cache */,
+				9BE4622F2FCB4C44001A6527 /* Network */,
+				9BE462282FCB4C28001A6527 /* Models */,
+			);
+			path = MiniMartCore;
+			sourceTree = "<group>";
+		};
+		9BE4621C2FCB33D5001A6527 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9BE4621B2FCB33D5001A6527 /* MiniMartCore */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9BE462222FCB33D5001A6527 /* MiniMartCore */ = {
+			isa = PBXGroup;
+			children = (
+				9BE4621C2FCB33D5001A6527 /* Sources */,
+				9BE462202FCB33D5001A6527 /* .gitignore */,
+				9BE462212FCB33D5001A6527 /* Package.swift */,
+			);
+			path = MiniMartCore;
+			sourceTree = "<group>";
+		};
+		9BE4623B2FCB4D9D001A6527 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,9 +169,13 @@
 			);
 			fileSystemSynchronizedGroups = (
 				9B455CC32FB4E38B00CA597C /* MiniMart */,
+				9BE462282FCB4C28001A6527 /* Models */,
+				9BE4622F2FCB4C44001A6527 /* Network */,
+				9BE462372FCB4C52001A6527 /* Cache */,
 			);
 			name = MiniMart;
 			packageProductDependencies = (
+				9BE4623C2FCB4D9D001A6527 /* MiniMartCore */,
 			);
 			productName = MiniMart;
 			productReference = 9B455CC12FB4E38B00CA597C /* MiniMart.app */;
@@ -195,6 +259,9 @@
 			);
 			mainGroup = 9B455CB82FB4E38B00CA597C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9BE4623A2FCB4D8C001A6527 /* XCLocalSwiftPackageReference "MiniMartCore" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9B455CC22FB4E38B00CA597C /* Products */;
 			projectDirPath = "";
@@ -212,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BE462262FCB33D5001A6527 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +642,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		9BE4623A2FCB4D8C001A6527 /* XCLocalSwiftPackageReference "MiniMartCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = MiniMartCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9BE4623C2FCB4D9D001A6527 /* MiniMartCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BE4623A2FCB4D8C001A6527 /* XCLocalSwiftPackageReference "MiniMartCore" */;
+			productName = MiniMartCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B455CB92FB4E38B00CA597C /* Project object */;
 }

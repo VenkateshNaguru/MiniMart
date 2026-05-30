@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-actor ImageCache {
+public actor ImageCache {
     static let shared = ImageCache()
 
     private let cache = NSCache<NSString, UIImage>()

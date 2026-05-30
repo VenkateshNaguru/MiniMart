@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MiniMartCore
 
 final class DependencyContainer {
     init() {}
