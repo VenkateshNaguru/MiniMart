@@ -25,7 +25,8 @@ struct CartView: View {
             .onAppear {
                 if vm == nil {
                     vm = CartViewModel(
-                        repository: SwiftDataCartRepository(context: context)
+                        repository: SwiftDataCartRepository(context: context),
+                        analytics: ConsoleAnalyticsService.shared
                     )
                     vm?.loadItems()
                 }

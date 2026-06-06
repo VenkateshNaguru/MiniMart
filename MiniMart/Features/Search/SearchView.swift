@@ -10,8 +10,8 @@ import SwiftUI
 struct SearchView: View {
     @StateObject private var vm: SearchViewModel
     
-    init(searchUseCase: SearchProductsUseCase) {
-        _vm = StateObject(wrappedValue: SearchViewModel(searchUseCase: searchUseCase))
+    init(searchUseCase: SearchProductsUseCase, analytics: AnalyticsServiceProtocol) {
+        _vm = StateObject(wrappedValue: SearchViewModel(searchUseCase: searchUseCase, analytics: analytics))
     }
 
     var body: some View {

@@ -16,6 +16,7 @@ class SearchViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     private let searchUseCase: SearchProductsUseCase
+    private let analytics: AnalyticsServiceProtocol
 
     @ObservationIgnored
     private var cancellables = Set<AnyCancellable>()
@@ -23,8 +24,10 @@ class SearchViewModel: ObservableObject {
     @ObservationIgnored
     private var searchTask: Task<Void, Never>?
     
-    init(searchUseCase: SearchProductsUseCase) {
+    init(searchUseCase: SearchProductsUseCase,
+         analytics: AnalyticsServiceProtocol) {
         self.searchUseCase = searchUseCase
+        self.analytics = analytics
         setupSearchPipeline()
     }
     
@@ -50,11 +53,20 @@ class SearchViewModel: ObservableObject {
         defer {
             isLoading = false
         }
+        analytics.log(.searchPerformed(query: query))
         
         do {
             results = try await searchUseCase.execute(query: query)
+            analytics.log(.searchResultsReturned(
+                query: query,
+                count: results.count
+            ))
         } catch {
             errorMessage = error.localizedDescription
+            analytics.log(.errorOccurred(
+                screen: "Search",
+                error: error.localizedDescription
+            ))
         }
     }
     

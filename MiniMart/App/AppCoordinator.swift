@@ -15,13 +15,15 @@ final class AppCoordinator {
     var path = NavigationPath()
     var productListViewModel: ProductListViewModel
     private let dependencies: DependencyContainer
+    let analytics = ConsoleAnalyticsService.shared
     
     init(dependencies: DependencyContainer) {
         self.dependencies = dependencies
         
         let vm = ProductListViewModel(
             fetchProductsUseCase: dependencies.makeFetchProductUseCase(),
-            fetchCategoriesUseCase: dependencies.makeFetchCategoriesUseCase()
+            fetchCategoriesUseCase: dependencies.makeFetchCategoriesUseCase(),
+            analytics: analytics
         )
         self.productListViewModel = vm
         vm.onProductSelected = { [weak self] product in
@@ -31,7 +33,8 @@ final class AppCoordinator {
 
     func makeSearchView() -> SearchView {
         SearchView(
-            searchUseCase: dependencies.makeSearchProductsUseCase()
+            searchUseCase: dependencies.makeSearchProductsUseCase(),
+            analytics: analytics
         )
     }
     

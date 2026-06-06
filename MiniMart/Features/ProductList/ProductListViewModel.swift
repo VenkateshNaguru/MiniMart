@@ -20,6 +20,8 @@ class ProductListViewModel {
     
     private let fetchProductsUseCase: FetchProductsUseCase
     private let fetchCategoriesUseCase: FetchCategoriesUseCase
+    private let analytics: AnalyticsServiceProtocol
+
     var onProductSelected: ((Product) -> Void)?
 
     var filteredProducts: [Product] {
@@ -31,9 +33,11 @@ class ProductListViewModel {
     }
     
     init(fetchProductsUseCase: FetchProductsUseCase,
-         fetchCategoriesUseCase: FetchCategoriesUseCase) {
+         fetchCategoriesUseCase: FetchCategoriesUseCase,
+         analytics: AnalyticsServiceProtocol) {
         self.fetchProductsUseCase = fetchProductsUseCase
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
+        self.analytics = analytics
     }
     
     func loadProducts() async {
@@ -48,16 +52,30 @@ class ProductListViewModel {
 
             self.products = fetchedProducts
             self.categories = fetchedCategories
+            analytics.log(.screenViewed(name: "ProductList"))
         } catch {
             errorMessage = error.localizedDescription
+            analytics.log(.errorOccurred(
+                        screen: "ProductList",
+                        error: error.localizedDescription
+                    ))
         }
     }
 
     func selectedCategory(_ category: Category?) {
+        if let category {
+            analytics.log(.categorySelected(name: category.name))
+        } else {
+            analytics.log(.categoryCleared)
+        }
         selectedCategory = category
     }
     
     func selectProduct(_ product: Product) {
+        analytics.log(.productViewed(
+            id: product.id,
+            title: product.title
+        ))
         onProductSelected?(product)
     }
 }

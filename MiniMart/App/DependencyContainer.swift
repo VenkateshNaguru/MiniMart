@@ -10,7 +10,7 @@ import MiniMartCore
 
 final class DependencyContainer {
     init() {}
-    
+        
     // MARK: - Network
     lazy var networkClient: NetworkClient = {
         NetworkClient()

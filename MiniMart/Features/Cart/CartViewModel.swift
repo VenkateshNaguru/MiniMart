@@ -17,9 +17,12 @@ class CartViewModel {
     var totalPrice: Double = 0
 
     private let repository: CartRepositoryProtocol
+    private let analytics: AnalyticsServiceProtocol
 
-    init(repository: CartRepositoryProtocol) {
+    init(repository: CartRepositoryProtocol,
+         analytics: AnalyticsServiceProtocol) {
         self.repository = repository
+        self.analytics = analytics
     }
 
     func loadItems() {
@@ -30,6 +33,11 @@ class CartViewModel {
     func addToCart(_ product: Product) {
         repository.addToCart(product)
         loadItems()
+        analytics.log(.productAddedToCart(
+            id: product.id,
+            title: product.title,
+            price: product.price
+        ))
     }
 
     func removeFromCart(_ product: Product) {
