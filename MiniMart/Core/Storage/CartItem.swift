@@ -38,8 +38,9 @@ extension CartItem {
             title: productTitle,
             price: productPrice,
             description: "",
-            category: Category(id: 0, name: "", image: ""),
-            images: [productImage]
+            category: "",
+            images: [productImage],
+            thumbnail: ""
         )
     }
 }

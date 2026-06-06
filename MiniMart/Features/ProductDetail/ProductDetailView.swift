@@ -67,7 +67,7 @@ struct ProductDetailView: View {
                         .fontWeight(.bold)
                     
                     // Category
-                    Text(vm.product.category.name)
+                    Text(vm.product.category)
                         .font(.caption)
                         .padding(.horizontal, 8)
                         .padding(.vertical, 4)

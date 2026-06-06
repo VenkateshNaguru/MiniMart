@@ -23,12 +23,13 @@ struct MainTabView: View {
             .tabItem {
                 Label("Products", systemImage: "house.fill")
             }
-            
-            coordinator.makeSearchView()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-            
+            // Search tab - feature flagged
+            if FeatureFlags.shared.isEnabled(.searchEnabled) {
+                coordinator.makeSearchView()
+                    .tabItem {
+                        Label("Search", systemImage: "magnifyingglass")
+                    }
+            }
             CartView()
                 .tabItem {
                     Label("Cart", systemImage: "cart.fill")

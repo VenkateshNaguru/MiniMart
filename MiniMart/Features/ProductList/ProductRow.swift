@@ -34,7 +34,7 @@ struct ProductRow: View {
                 Text(product.title)
                     .font(.headline)
                     .lineLimit(2)
-                Text(product.category.name)
+                Text(product.category)
                     .font(.caption)
                     .foregroundStyle(.secondary)
                 Text("$\(product.price, format: .number.precision(.fractionLength(2)))")
@@ -54,7 +54,8 @@ struct ProductRow: View {
         title: "Sample Product",
         price: 109.95,
         description: "A great product",
-        category: Category(id: 1, name: "Electronics", image: ""),
-        images: ["https://picsum.photos/200"]
+        category: "Electronics",
+        images: ["https://picsum.photos/200"],
+        thumbnail: ""
     ))
 }

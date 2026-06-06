@@ -22,7 +22,8 @@ final class ProductRepository: ProductRepositoryProtocol {
     }
     
     func fetchProducts() async throws -> [Product] {
-        try await networkClient.fetch(endpoint: .products)
+        let response: ProductResponse = try await networkClient.fetch(endpoint: .products)
+        return response.products
     }
     
     func fetchProduct(id: Int) async throws -> Product {
@@ -30,7 +31,8 @@ final class ProductRepository: ProductRepositoryProtocol {
     }
     
     func searchProducts(title: String) async throws -> [Product] {
-        try await networkClient.fetch(endpoint: .searchProducts(title: title))
+        let response: ProductResponse = try await networkClient.fetch(endpoint: .searchProducts(query: title))
+        return response.products
     }
 
     func fetchCategories() async throws -> [Category] {

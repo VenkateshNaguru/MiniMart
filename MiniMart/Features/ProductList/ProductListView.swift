@@ -22,8 +22,10 @@ struct ProductListView: View {
                     }
                 }
             } else {
-                
-                categoryFilter
+                // Category filter - feature flagged
+                if FeatureFlags.shared.isEnabled(.categoryFilter) {
+                    categoryFilter
+                }
 
                 VStack(spacing: 0) {
                     List(vm.filteredProducts) { product in

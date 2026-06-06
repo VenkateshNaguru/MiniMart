@@ -18,8 +18,8 @@ enum Endpoint {
     case products
     case product(id: Int)
     case categories
-    case productsByCategory(id: Int)
-    case searchProducts(title: String)
+    case productsByCategory(name: String)
+    case searchProducts(query: String)
 
     var path: String {
         switch self {
@@ -28,11 +28,14 @@ enum Endpoint {
         case .product(let id):
             return "/products/\(id)"
         case .categories:
-            return "/categories"
-        case .productsByCategory(let id):
-            return "/categories/\(id)/products"
-        case .searchProducts(let title):
-            return "/products/?title=\(title)"
+            return "/products/categories"
+        case .productsByCategory(let name):
+            return "/products/category/\(name)"
+        case .searchProducts(let query):
+            let encoded = query.addingPercentEncoding(
+                withAllowedCharacters: .urlQueryAllowed
+            )
+            return "/products/search?q=\(encoded ?? "")"
         }
     }
 

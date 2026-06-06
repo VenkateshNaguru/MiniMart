@@ -7,33 +7,93 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "737D106C-FB69-40D2-90EF-7EBAC097457F"
+            uuid = "7A97F355-B5F1-43C2-9E33-FDA3ED1E892A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MiniMart/Features/ProductList/ProductListViewModel.swift"
+            filePath = "MiniMartCore/Sources/MiniMartCore/Network/NetworkClient.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "loadProducts()"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "fetch(endpoint:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7A97F355-B5F1-43C2-9E33-FDA3ED1E892A - 2cb5c718f15e1b96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MiniMart.NetworkClient.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: MiniMart.Endpoint) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "MiniMart.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mouni/Desktop/MiniMart/MiniMartCore/Sources/MiniMartCore/Network/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49">
+               </Location>
+               <Location
+                  uuid = "7A97F355-B5F1-43C2-9E33-FDA3ED1E892A - b69f4b7662cb1b9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for MiniMartCore.NetworkClient.fetch&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable, &#x3c4;_0_0: Swift.Encodable&gt;(endpoint: MiniMartCore.Endpoint) async throws -&gt; &#x3c4;_0_0"
+                  moduleName = "MiniMart.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mouni/Desktop/MiniMart/MiniMartCore/Sources/MiniMartCore/Network/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0A0340B7-8612-44AA-AF08-8C5FFA87CB98"
+            uuid = "74FC84E0-BA83-47E2-83FF-D26143F40532"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MiniMart/Core/UseCases/FetchProductsUseCase.swift"
+            filePath = "MiniMartCore/Sources/MiniMartCore/Network/Endpoint.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "execute()"
-            landmarkType = "7">
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "path"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "74FC84E0-BA83-47E2-83FF-D26143F40532 - 912ebbb4c308be05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniMart.Endpoint.path.getter : Swift.String"
+                  moduleName = "MiniMart.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mouni/Desktop/MiniMart/MiniMartCore/Sources/MiniMartCore/Network/Endpoint.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+               <Location
+                  uuid = "74FC84E0-BA83-47E2-83FF-D26143F40532 - ee9241c320d82b70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MiniMartCore.Endpoint.path.getter : Swift.String"
+                  moduleName = "MiniMart.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mouni/Desktop/MiniMart/MiniMartCore/Sources/MiniMartCore/Network/Endpoint.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -8,13 +8,15 @@
 import Foundation
 
 public struct Category: Codable, Identifiable, Hashable {
-    public let id: Int
+    public let slug: String
     public let name: String
-    public let image: String
+    public let url: String
+    
+    public var id: String { slug }
 
-    public init(id: Int, name: String, image: String) {
-        self.id = id
+    public init(slug: String, name: String, url: String) {
+        self.slug = slug
         self.name = name
-        self.image = image
+        self.url = url
     }
 }

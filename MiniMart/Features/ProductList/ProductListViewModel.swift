@@ -27,7 +27,7 @@ class ProductListViewModel {
             return products
         }
 
-        return products.filter { $0.category.id == selected.id }
+        return products.filter { $0.category == selected.slug }
     }
     
     init(fetchProductsUseCase: FetchProductsUseCase,

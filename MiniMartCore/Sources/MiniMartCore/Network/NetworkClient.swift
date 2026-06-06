@@ -16,7 +16,7 @@ enum NetworkError: Error {
 
 public final class NetworkClient {
     private let session: URLSession
-    private let baseURL = "https://api.escuelajs.co/api/v1"
+    private let baseURL = "https://dummyjson.com"
     
     init(session: URLSession = .shared) {
         self.session = session
@@ -51,5 +51,4 @@ public final class NetworkClient {
             throw NetworkError.decodingError(error)
         }
     }
-    
 }
